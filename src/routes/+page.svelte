@@ -1,10 +1,42 @@
 <script>
   let email = '';
   let submitted = false;
+  let isLoading = false; // 로딩 상태 추가
 
-  function handleSubmit() {
-    if (email) {
-      submitted = true;
+  // ⚠️ 1단계에서 복사한 '웹 앱 URL'을 아래 따옴표 안에 넣어주세요!
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw06fZtjjLdDLZW04uJWFRubJ2_8Ee-2EGVYsGtbra29v2EIap4vzhSrOl32J1e7hXn3Q/exec';
+
+  async function handleSubmit() {
+    if (!email) return;
+    
+    // URL이 설정되지 않았을 때 안내
+    if (GOOGLE_SCRIPT_URL.includes('여기에_')) {
+        alert('개발자님! Google Apps Script 배포 URL을 코드에 입력해주세요.');
+        return;
+    }
+
+    isLoading = true;
+
+    try {
+        const formData = new FormData();
+        formData.append('email', email);
+        formData.append('date', new Date().toLocaleString('ko-KR')); // 한국 시간 기록
+
+        // 구글 스크립트로 전송
+        await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors' // 구글 시트 CORS 에러 방지용 (응답 내용을 읽진 못해도 전송은 됨)
+        });
+
+        // no-cors 모드에서는 항상 성공으로 간주하고 처리 (실제 실패율 매우 낮음)
+        submitted = true;
+        
+    } catch (error) {
+        console.error('Error:', error);
+        alert('전송 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
+    } finally {
+        isLoading = false;
     }
   }
 </script>
@@ -113,9 +145,13 @@
                                 />
                             </div>
                             
-                            <button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3 sm:py-4 text-sm sm:text-base rounded-xl sm:rounded-2xl shadow-lg shadow-primary/30 transition-all active:scale-[0.98] flex items-center justify-center gap-2">
-                                지금 사전 예약하기
-                                <span class="material-icons text-sm sm:text-base">arrow_forward</span>
+                            <button disabled={isLoading} class="w-full bg-primary hover:bg-primary/90 disabled:opacity-70 disabled:cursor-not-allowed text-white font-bold py-3 sm:py-4 text-sm sm:text-base rounded-xl sm:rounded-2xl shadow-lg shadow-primary/30 transition-all active:scale-[0.98] flex items-center justify-center gap-2">
+                                {#if isLoading}
+                                    <span>처리 중...</span>
+                                {:else}
+                                    지금 사전 예약하기
+                                    <span class="material-icons text-sm sm:text-base">arrow_forward</span>
+                                {/if}
                             </button>
                         </form>
                         
