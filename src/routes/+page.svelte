@@ -5,7 +5,6 @@
   function handleSubmit() {
     if (email) {
       submitted = true;
-      // In a real app, you'd send this to your backend
     }
   }
 </script>
@@ -20,10 +19,10 @@
   <!-- Header -->
   <nav class="relative z-10 w-full max-w-7xl px-8 py-8 flex justify-between items-center">
     <div class="text-2xl font-extrabold tracking-tighter gradient-text">NEXTGEN STUDIO</div>
-    <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
-      <a href="#features" class="hover:text-white transition-colors">Features</a>
-      <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
-      <a href="#about" class="hover:text-white transition-colors">About</a>
+    <div class="hidden md:flex gap-8 text-sm font-medium text-slate-400">
+      <a href="#features" class="text-slate-400 hover:text-white transition-all" style="text-decoration: none;">Features</a>
+      <a href="#pricing" class="text-slate-400 hover:text-white transition-all" style="text-decoration: none;">Pricing</a>
+      <a href="#about" class="text-slate-400 hover:text-white transition-all" style="text-decoration: none;">About</a>
     </div>
   </nav>
 
@@ -33,7 +32,7 @@
       Coming Q2 2026
     </div>
     
-    <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight animate-fade-in" style="animation-delay: 0.2s">
+    <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight animate-fade-in text-white" style="animation-delay: 0.2s">
       미래를 위한 최상의<br/>
       <span class="gradient-text">웹사이트 프리오더</span>
     </h1>
@@ -46,14 +45,15 @@
     <!-- Pre-order Form -->
     <div class="glass p-8 md:p-10 w-full max-w-xl animate-fade-in" style="animation-delay: 0.4s">
       {#if !submitted}
-        <h3 class="text-xl font-bold mb-4">지금 예약하고 20% 얼리버드 혜택 받기</h3>
+        <h3 class="text-xl font-bold mb-4 text-white">지금 예약하고 20% 얼리버드 혜택 받기</h3>
         <form on:submit|preventDefault={handleSubmit} class="flex flex-col md:flex-row gap-4">
           <input 
             type="email" 
             placeholder="이메일 주소를 입력하세요" 
             bind:value={email}
             required
-            class="flex-1 bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all"
+            class="flex-1 bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none transition-all"
+            style="color: white; border: 1px solid rgba(255,255,255,0.1);"
           />
           <button type="submit" class="btn-primary whitespace-nowrap">
             예약 주문 신청
@@ -61,13 +61,13 @@
         </form>
         <p class="mt-4 text-xs text-slate-500">신청 시 개인정보 수집 및 마케팅 활용에 동의하게 됩니다.</p>
       {:else}
-        <div class="text-center py-4">
-          <div class="inline-flex items-center justify-center w-16 h-16 bg-emerald-500/20 rounded-full mb-4">
-            <svg class="w-8 h-8 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="text-center py-8">
+          <div class="inline-flex items-center justify-center w-16 h-16 bg-emerald-500/20 rounded-full mb-4 mx-auto">
+            <svg class="w-8 h-8 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 32px; height: 32px;">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
             </svg>
           </div>
-          <h3 class="text-2xl font-bold mb-2">예약이 완료되었습니다!</h3>
+          <h3 class="text-2xl font-bold mb-2 text-white">예약이 완료되었습니다!</h3>
           <p class="text-slate-400">입력하신 <strong>{email}</strong>로 출시 소식을 가장 먼저 보내드릴게요.</p>
         </div>
       {/if}
@@ -94,42 +94,10 @@
     </div>
   </section>
 
-  <!-- Footer Spacer -->
-  <div class="h-32"></div>
+  <div style="height: 8rem;"></div>
 </main>
 
 <style>
-  /* Extra utility styles that aren't in app.css but helpful here */
-  :global(.flex-1) { flex: 1 1 0%; }
-  :global(.flex-col) { flex-direction: column; }
-  :global(.items-center) { align-items: center; }
-  :global(.justify-center) { justify-content: center; }
-  :global(.text-center) { text-align: center; }
-  :global(.min-h-screen) { min-height: 100vh; }
-  :global(.w-full) { width: 100%; }
-  :global(.h-full) { height: 100%; }
-  :global(.max-w-7xl) { max-width: 80rem; }
-  :global(.max-w-xl) { max-width: 36rem; }
-  :global(.max-w-2xl) { max-width: 42rem; }
-  :global(.max-w-4xl) { max-width: 56rem; }
-  :global(.px-4) { padding-left: 1rem; padding-right: 1rem; }
-  :global(.px-8) { padding-left: 2rem; padding-right: 2rem; }
-  :global(.py-8) { padding-top: 2rem; padding-bottom: 2rem; }
-  :global(.mt-20) { margin-top: 5rem; }
-  :global(.mt-24) { margin-top: 6rem; }
-  :global(.mt-32) { margin-top: 8rem; }
-  :global(.mb-2) { margin-bottom: 0.5rem; }
-  :global(.mb-4) { margin-bottom: 1rem; }
-  :global(.mb-6) { margin-bottom: 1.5rem; }
-  :global(.mb-10) { margin-bottom: 2.5rem; }
-  :global(.gap-4) { gap: 1rem; }
-  :global(.gap-8) { gap: 2rem; }
-  :global(.rounded-xl) { border-radius: 0.75rem; }
-  :global(.bg-slate-900\/50) { background-color: rgba(15, 23, 42, 0.5); }
-  :global(.border-white\/10) { border-color: rgba(255, 255, 255, 0.1); }
-  :global(.text-emerald-500) { color: #10b981; }
-  :global(.bg-emerald-500\/20) { background-color: rgba(16, 185, 129, 0.2); }
-  :global(.text-indigo-400) { color: #818cf8; }
-  :global(.bg-indigo-500\/10) { background-color: rgba(99, 102, 241, 0.1); }
-  :global(.border-indigo-500\/20) { border-color: rgba(99, 102, 241, 0.2); }
+  /* Simplified scoped styles for specific tweaks */
+  .mx-auto { margin-left: auto; margin-right: auto; }
 </style>
