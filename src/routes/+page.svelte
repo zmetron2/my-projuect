@@ -164,7 +164,10 @@
                                 <span class="material-icons text-emerald-500 text-3xl">check</span>
                             </div>
                             <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">예약이 완료되었습니다!</h3>
-                            <p class="text-slate-500">서비스 출시 시 <strong>{email}</strong>(으)로 알려드리겠습니다.</p>
+                            <p class="text-slate-500 mb-4">서비스 출시 시 <strong>{email}</strong>(으)로 알려드리겠습니다.</p>
+                            <a href="https://docs.google.com/spreadsheets/d/1WzxtNvO8CPnePeRkBphenzhSknOSknL4q0MWiTh2kak/edit?usp=sharing" target="_blank" class="text-primary hover:text-primary/80 text-sm font-medium underline underline-offset-4">
+                                등록이 되었는지 확인하기 &rarr;
+                            </a>
                         </div>
                     {/if}
 
