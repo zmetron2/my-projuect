@@ -9,8 +9,42 @@
   <meta name="description" content="미래의 디지털 경험을 지금 선점하세요. 혁신적인 웹사이트 예약 주문 시스템." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#7C3AED",
+            "background-light": "#F8FAFC",
+            "background-dark": "#0F172A",
+            accent: {
+              blue: "#3B82F6",
+              purple: "#A78BFA"
+            }
+          },
+          fontFamily: {
+            display: ["Inter", "Noto Sans KR", "sans-serif"],
+            sans: ["Inter", "Noto Sans KR", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "1rem",
+            'xl': '1.5rem',
+            '2xl': '2rem',
+          },
+          screens: {
+            'xs': '475px',
+            '3xl': '1920px',
+          }
+        },
+      },
+    };
+  </script>
   %sveltekit.head%
 </head>
 
