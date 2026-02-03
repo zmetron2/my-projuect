@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NextGen Studio - The Future of Web Design</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#7C3AED", // Vibrant purple from screenshot
+                        "background-light": "#F8FAFC", // Clean slate white
+                        "background-dark": "#0F172A", // Deep slate
+                        accent: {
+                            blue: "#3B82F6",
+                            purple: "#A78BFA"
+                        }
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                        'xl': '1.5rem',
+                        '2xl': '2rem',
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+        .dark .glass-card {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.08) 0%, transparent 70%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #7C3AED 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen overflow-x-hidden">
+<div class="h-12 w-full"></div>
+<nav class="px-6 py-4 flex justify-between items-center relative z-10">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-icons text-white text-xl">rocket_launch</span>
+</div>
+<span class="font-extrabold text-xl tracking-tight text-slate-900 dark:text-white">NEXTGEN STUDIO</span>
+</div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-white/50 dark:bg-white/10 border border-slate-200 dark:border-slate-700">
+<span class="material-icons text-xl">menu</span>
+</button>
+</nav>
+<main class="px-6 pt-12 pb-24 relative">
+<div class="absolute top-20 left-1/2 -translate-x-1/2 w-[140%] h-[500px] hero-gradient pointer-events-none -z-10"></div>
+<div class="absolute -top-10 -right-20 w-64 h-64 bg-accent-purple/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-40 -left-20 w-64 h-64 bg-accent-blue/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="flex flex-col items-center text-center">
+<div class="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-8">
+<span class="text-xs font-bold tracking-widest text-primary uppercase">COMING Q2 2026</span>
+</div>
+<h1 class="text-4xl md:text-5xl font-extrabold leading-[1.15] mb-6 tracking-tight">
+                The Best Website <br/>
+<span class="text-gradient">Pre-order for the Future</span>
+</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base leading-relaxed max-w-xs mb-12">
+                Revolutionary user experiences that go beyond ordinary websites. Secure your next-generation digital presence with NextGen Studio today.
+            </p>
+<div class="w-full glass-card p-6 md:p-8 rounded-3xl shadow-2xl shadow-slate-200/50 dark:shadow-none border border-white/40 dark:border-white/5">
+<div class="flex items-center justify-center gap-2 mb-6">
+<span class="material-icons text-primary">auto_awesome</span>
+<h2 class="text-lg font-bold">20% Early Bird Benefit</h2>
+</div>
+<div class="space-y-4">
+<div class="relative">
+<span class="material-icons absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">mail_outline</span>
+<input class="w-full pl-12 pr-4 py-4 bg-white/80 dark:bg-slate-800/80 border-slate-200 dark:border-slate-700 rounded-2xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none text-slate-900 dark:text-white placeholder:text-slate-400" placeholder="Enter your email address" type="email"/>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-2xl shadow-lg shadow-primary/30 transition-all active:scale-[0.98] flex items-center justify-center gap-2">
+                        Pre-order Now
+                        <span class="material-icons text-sm">arrow_forward</span>
+</button>
+</div>
+<p class="mt-6 text-[11px] text-slate-400 dark:text-slate-500 leading-normal">
+                    By signing up, you agree to our data collection and marketing usage policies. We respect your privacy.
+                </p>
+</div>
+<div class="mt-16 flex flex-wrap justify-center gap-8 opacity-60">
+<div class="flex flex-col items-center">
+<span class="text-2xl font-bold">99%</span>
+<span class="text-[10px] uppercase tracking-widest font-semibold">Satisfaction</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-2xl font-bold">24/7</span>
+<span class="text-[10px] uppercase tracking-widest font-semibold">Support</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-2xl font-bold">50+</span>
+<span class="text-[10px] uppercase tracking-widest font-semibold">Templates</span>
+</div>
+</div>
+</div>
+</main>
+<div class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 px-6 pt-3 pb-8 flex justify-around items-center z-50">
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-icons">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-icons">explore</span>
+<span class="text-[10px] font-medium">Explore</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-icons">shopping_bag</span>
+<span class="text-[10px] font-medium">Pre-order</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-icons">person_outline</span>
+<span class="text-[10px] font-medium">Profile</span>
+</div>
+</div>
+<div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none overflow-hidden -z-20 opacity-30 dark:opacity-10">
+<svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="40" id="grid" patternUnits="userSpaceOnUse" width="40">
+<path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="0.5"></path>
+</pattern>
+</defs>
+<rect fill="url(#grid)" height="100%" width="100%"></rect>
+</svg>
+</div>
+
+</body></html>
